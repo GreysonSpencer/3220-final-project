@@ -8,7 +8,7 @@ class SymmetricEnc : public EncryptionStrategy {
         virtual int getPrivateKey() = 0;
         virtual void setPrivateKey(int key) = 0;
         ~SymmetricEnc(){};
-    private:
+    protected:
         int privateKey;
 };
 
