@@ -7,9 +7,9 @@ class Encryptor {
     private:
         EncryptionStrategy *_strategy;
     public:
-        Encryptor(EncryptionStrategy *_strategy);
+        Encryptor(EncryptionStrategy *strategy);
         ~Encryptor();
-        void changeStrategy(EncryptionStrategy *_strategy);
+        void changeStrategy(EncryptionStrategy *strategy);
         void encrypt();
 };
 
