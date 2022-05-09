@@ -1,6 +1,6 @@
 TARGET := main
 
-CFLAGS := -Wall -Wextra -Werror -DNDEBUG -O2 -l:libcrypto++.a
+CFLAGS := -Wall -Wextra -Werror -DNDEBUG -O2 -lcryptopp
 
 SOURCES := $(wildcard *.cpp)
 
