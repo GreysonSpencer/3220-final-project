@@ -7,3 +7,4 @@ RUN apt-get install -y make
 RUN git clone "https://github.com/GreysonSpencer/3220-final-project.git" \
     && cd "3220-final-project" \
     && make
+RUN apt-get install libcrypto++8 libcrypto++8-dbg libcrypto++-dev
