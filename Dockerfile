@@ -11,10 +11,10 @@ RUN apt-get install -y make
 # build library
 RUN git clone "https://github.com/weidai11/cryptopp.git"
 RUN cd cryptopp
-RUN make
+RUN make GNUmakefile
 
 # install library
-RUN make install
+RUN make GNUmakefile install
 
 RUN cd ../
 
