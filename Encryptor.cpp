@@ -2,7 +2,7 @@
 
 Encryptor::Encryptor(EncryptionStrategy *strategy)
 {
-
+    _strategy = strategy;
 }
 
 Encryptor::~Encryptor()
