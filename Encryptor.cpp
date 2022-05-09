@@ -17,5 +17,5 @@ void Encryptor::changeStrategy(EncryptionStrategy *strategy)
 
 void Encryptor::encrypt()
 {
-
+    _strategy->execute();
 }
