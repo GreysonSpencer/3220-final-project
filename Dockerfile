@@ -16,7 +16,7 @@ RUN make -f ./GNUmakefile
 # install library
 RUN make -f ./GNUmakefile install
 
-RUN cd ../
+WORKDIR ../
 
 # Clone repo and compile it
 RUN git clone "https://github.com/GreysonSpencer/3220-final-project.git" \
