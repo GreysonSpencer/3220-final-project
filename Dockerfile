@@ -9,7 +9,7 @@ RUN apt-get install -y make
 # crypto++ installation
 
 # build library
-RUN git clone "git://github.com/weidai11/cryptoapp.git"
+RUN git clone "https://github.com/weidai11/cryptopp.git"
 RUN cd cryptoapp
 RUN make
 
