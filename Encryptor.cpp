@@ -12,7 +12,7 @@ Encryptor::~Encryptor()
 
 void Encryptor::changeStrategy(EncryptionStrategy *strategy)
 {
-
+    _strategy = strategy;
 }
 
 void Encryptor::encrypt()
