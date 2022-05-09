@@ -10,7 +10,7 @@ RUN apt-get install -y make
 
 # build library
 RUN git clone "https://github.com/weidai11/cryptopp.git"
-RUN cd cryptoapp
+RUN cd cryptopp
 RUN make
 
 # install library
