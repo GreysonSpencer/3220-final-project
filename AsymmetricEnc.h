@@ -5,9 +5,13 @@
 
 class AsymmetricEnc : public EncryptionStrategy {
     public:
-        int publicKey;
+        virtual int getPublicKey() = 0;
+        virtual void setPublicKey(int key) = 0;
+        virtual int getPrivateKey() = 0;
+        virtual void setPrivateKey(int key) = 0;
         ~AsymmetricEnc(){};
     private:
+        int publicKey;
         int privateKey;
 };
 
