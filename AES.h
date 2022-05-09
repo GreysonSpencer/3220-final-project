@@ -9,6 +9,9 @@
 #include "cryptopp/osrng.h"
 #include "cryptopp/hex.h"
 
+#include <iostream>
+#include <string>
+
 class AES : public SymmetricEnc {
     public:
         void execute();
