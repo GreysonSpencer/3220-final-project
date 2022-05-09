@@ -5,8 +5,11 @@
 
 class SymmetricEnc : public EncryptionStrategy {
     public:
-        int publicKey;
+        virtual int getPublicKey() = 0;
+        virtual void setPublicKey(int key) = 0;
         ~SymmetricEnc(){};
+    private:
+        int publicKey;
 };
 
 #endif
