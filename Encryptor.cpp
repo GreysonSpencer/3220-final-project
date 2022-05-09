@@ -7,7 +7,7 @@ Encryptor::Encryptor(EncryptionStrategy *strategy)
 
 Encryptor::~Encryptor()
 {
-
+    delete _strategy;
 }
 
 void Encryptor::changeStrategy(EncryptionStrategy *strategy)
