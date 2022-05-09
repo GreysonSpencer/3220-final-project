@@ -1,0 +1,4 @@
+#ifndef ENCRYPTIONSTRATEGY_H
+#define ENCRYPTIONSTRATEGY_H
+
+#endif
