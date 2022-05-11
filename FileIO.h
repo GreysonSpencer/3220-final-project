@@ -24,6 +24,8 @@ class FileIO {
         void writeFile();
 
         CryptoPP::SecByteBlock readKey();
+
+        void writeKey(CryptoPP::SecByteBlock key);
 };
 
 #endif

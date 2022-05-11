@@ -66,3 +66,20 @@ CryptoPP::SecByteBlock FileIO::readKey()
     input >> key;
     return key;
 }
+
+void FileIO::writeKey(CryptoPP::SecByteBlock key)
+{
+    std::ofstream output;
+    output.open(_filename);
+
+    if(!output.is_open())
+    {
+        std::cout << "Failed to open file\n";
+        return;
+    }
+    
+    for (int i = 0; i < key.size(); i++)
+    {
+        output << key.data()[i];
+    }
+}
