@@ -25,4 +25,6 @@ RUN git clone "https://github.com/GreysonSpencer/3220-final-project.git" \
     && cd "3220-final-project" \
     && make
 
+WORKDIR 3220-final-project
+
 RUN ./main
