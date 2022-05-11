@@ -63,6 +63,12 @@ void AES::encrypt(std::string filename)
 
 std::string AES::decrypt(std::string dec_string)
 {
+    // Step 1: need the initial vector
+
+    // Step 2: do the decryption
+
+    // Step 3: return the plaintext
+    
     return "Unimplemented, " + dec_string;
 }
 
