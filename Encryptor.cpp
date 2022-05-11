@@ -17,5 +17,5 @@ void Encryptor::changeStrategy(EncryptionStrategy *strategy)
 
 std::string Encryptor::encrypt(std::string enc_string)
 {
-    _strategy->encrypt(enc_string);
+    return _strategy->encrypt(enc_string);
 }
