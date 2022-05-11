@@ -70,7 +70,7 @@ void AES::execute()
             ) // StreamTransformationFilter
         ); // StringSource
 
-        std::cout << "recovered text: " << recovered << std::endl;
+        std::cout << "recovered text: " << recovered << " weird" << std::endl;
     }
     catch(const Exception& e)
     {
