@@ -5,7 +5,12 @@
 #include <iostream>
 #include <fstream>
 
-#include "cryptopp/secblock.h"
+#include "cryptopp/cryptlib.h"
+#include "cryptopp/rijndael.h"
+#include "cryptopp/modes.h"
+#include "cryptopp/files.h"
+#include "cryptopp/osrng.h"
+#include "cryptopp/hex.h"
 
 class FileIO {
     private:
