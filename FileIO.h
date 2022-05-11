@@ -2,6 +2,7 @@
 #define FILEIO_H
 
 #include <string>
+#include <iostream>
 
 class FileIO {
     private:
