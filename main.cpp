@@ -11,9 +11,13 @@ int main()
 
     enc->encrypt("test.txt");
 
-    FileIO test("test.txt");
+    FileIO test1("test.txt");
+    FileIO test2("test.txt.cipher");
+    FileIO test3("test.txt.key");
 
-    std::cout << test.readFile() << std::endl;
+    std::cout << test1.readFile() << std::endl;
+    std::cout << test2.readFile() << std::endl;
+    std::cout << test3.readFile() << std::endl;
 
     delete enc;
 }
