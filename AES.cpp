@@ -21,6 +21,7 @@ AES::AES(std::string keyFile)
 {
     FileIO file(keyFile);
     _key = file.readKey();
+    _IV = file.readIV();
 }
 
 void AES::encrypt(std::string filename)
