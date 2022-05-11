@@ -1,5 +1,15 @@
 #include "AES.h"
 
+AES::AES()
+{
+
+}
+
+AES::AES(CryptoPP::SecByteBlock key)
+{
+
+}
+
 std::string AES::encrypt(std::string enc_string)
 {
     using namespace CryptoPP;
