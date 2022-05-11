@@ -1,6 +1,6 @@
 #include "AES.h"
 
-std::string encrypt(std::string enc_string)
+std::string AES::encrypt(std::string enc_string)
 {
     using namespace CryptoPP;
 
@@ -34,7 +34,7 @@ std::string encrypt(std::string enc_string)
     return cipher;
 }
 
-std::string decrypt(std::string dec_string)
+std::string AES::decrypt(std::string dec_string)
 {
     return "Unimplemented, " + dec_string;
 }
