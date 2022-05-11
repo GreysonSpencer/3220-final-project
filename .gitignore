@@ -34,3 +34,5 @@
 .vscode
 main
 *.txt
+*.cipher
+*.key
