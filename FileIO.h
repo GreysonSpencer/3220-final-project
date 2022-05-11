@@ -23,7 +23,7 @@ class FileIO {
         //Writes a file in the form of a string with no newlines
         void writeFile();
 
-        CryptoPP::SecByteBlock readKey(std::string filename);
+        CryptoPP::SecByteBlock readKey();
 };
 
 #endif
