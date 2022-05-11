@@ -14,6 +14,8 @@ int main()
 
     std::string enc_input = enc->encrypt(input);
 
+    std::cout << enc_input << std::endl;
+
     delete enc;
     delete file;
 }
