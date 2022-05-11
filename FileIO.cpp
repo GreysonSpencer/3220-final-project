@@ -49,3 +49,20 @@ void FileIO::writeFile()
 
     output << _write_string;
 }
+
+CryptoPP::SecByteBlock FileIO::readKey()
+{
+    std::ifstream input;
+    input.open(_filename);
+
+    if(!input.is_open())
+    {
+        std::cout << "Failed to open file\n";
+        CryptoPP::SecByteBlock emptyKey(0);
+        return emptyKey;
+    }
+
+    CryptoPP::SecByteBlock key;
+    input >> key;
+    return key;
+}
