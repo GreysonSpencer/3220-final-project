@@ -6,6 +6,10 @@
 class FileIO {
     private:
         std::string filename;
+    public:
+        FileIO(std::string filename);
+        void setFilename(std::string filename);
+        std::string getFilename();
 };
 
 #endif
