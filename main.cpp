@@ -9,9 +9,9 @@ int main()
     AES *aes = new AES();
     Encryptor *enc = new Encryptor(aes);
 
-    enc->encrypt("test.exe");
+    enc->encrypt("test.txt");
 
-    FileIO test("test.exe");
+    FileIO test("test.txt");
 
     std::cout << test.readFile() << std::endl;
 
