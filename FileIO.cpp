@@ -67,6 +67,27 @@ CryptoPP::SecByteBlock FileIO::readKey()
     return key;
 }
 
+CryptoPP::SecByteBlock FileIO::readIV()
+{
+    std::ifstream input;
+    input.open(_filename);
+
+    if(!input.is_open())
+    {
+        std::cout << "Failed to open file\n";
+        CryptoPP::SecByteBlock emptyKey(0);
+        return emptyKey;
+    }
+
+    CryptoPP::SecByteBlock key(CryptoPP::AES::DEFAULT_KEYLENGTH);
+    input >> key;
+
+    CryptoPP::SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
+    input >> iv;
+
+    return iv;
+}
+
 void FileIO::writeKey(CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv)
 {
     std::ofstream output;
