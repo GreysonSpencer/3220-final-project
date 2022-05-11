@@ -22,7 +22,7 @@ class AES : public SymmetricEnc {
         AES();
         // Use this constructor when you need to decrypt
         AES(std::string keyFile);
-        std::string encrypt(std::string enc_string);
+        void encrypt(std::string filename);
         std::string decrypt(std::string dec_string);
         int getPrivateKey();
         void setPrivateKey(int key);
