@@ -11,6 +11,5 @@ int main()
 
     enc->encrypt();
 
-    delete aes;
     delete enc;
 }
