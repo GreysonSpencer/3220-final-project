@@ -39,7 +39,7 @@ std::string FileIO::readFile()
 void FileIO::writeFile()
 {
     std::ofstream output;
-    output.open("enc" + _filename);
+    output.open(_filename);
 
     if(!output.is_open())
     {
