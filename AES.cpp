@@ -31,6 +31,7 @@ std::string encrypt(std::string enc_string)
         std::cerr << e.what() << std::endl;
         exit(1);
     }
+    return cipher;
 }
 
 std::string decrypt(std::string dec_string)
