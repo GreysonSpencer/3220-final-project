@@ -36,7 +36,7 @@ std::string encrypt(std::string enc_string)
 
 std::string decrypt(std::string dec_string)
 {
-    return "Unimplemented";
+    return "Unimplemented, " + dec_string;
 }
 
 void AES::execute()
