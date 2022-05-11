@@ -62,7 +62,7 @@ CryptoPP::SecByteBlock FileIO::readKey()
         return emptyKey;
     }
 
-    CryptoPP::SecByteBlock key;
+    CryptoPP::SecByteBlock key(CryptoPP::AES::DEFAULT_KEYLENGTH);
     input >> key;
     return key;
 }
