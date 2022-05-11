@@ -3,7 +3,8 @@
 
 class EncryptionStrategy {
     public:
-        virtual void execute() = 0;
+        virtual std::string encrypt(std::string enc_string) = 0;
+        virtual std::string decrypt(std::string dec_string) = 0;
         virtual ~EncryptionStrategy(){};
 };
 
