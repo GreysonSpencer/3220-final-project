@@ -18,6 +18,7 @@ class FileIO {
         
         //Reads a file in the form of a string with no newlines
         std::string readFile();
+        //Writes a file in the form of a string with no newlines
         void writeFile();
 };
 
