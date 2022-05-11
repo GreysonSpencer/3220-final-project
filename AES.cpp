@@ -5,9 +5,10 @@ AES::AES()
 
 }
 
-AES::AES(CryptoPP::SecByteBlock key)
+AES::AES(std::string keyFile)
 {
-
+    FileIO file(keyFile);
+    _key = file.readKey();
 }
 
 std::string AES::encrypt(std::string enc_string)
