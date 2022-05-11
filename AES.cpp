@@ -77,6 +77,7 @@ void AES::execute()
         std::cerr << e.what() << std::endl;
         exit(1);
     }
+    std::cout << "Encryption success\n";
 }
 
 int AES::getPrivateKey()
