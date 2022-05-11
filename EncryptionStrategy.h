@@ -1,6 +1,8 @@
 #ifndef ENCRYPTIONSTRATEGY_H
 #define ENCRYPTIONSTRATEGY_H
 
+#include <string>
+
 class EncryptionStrategy {
     public:
         virtual std::string encrypt(std::string enc_string) = 0;
