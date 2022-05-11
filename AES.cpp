@@ -43,6 +43,8 @@ void AES::encrypt(std::string filename)
                 new StringSink(ciphertext)
             ) // StreamTransformationFilter
         ); // StringSource
+
+        std::cout << "encoded text: " << ciphertext << std::endl;
     }
     catch(const Exception& e)
     {
