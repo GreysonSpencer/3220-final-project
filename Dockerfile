@@ -13,8 +13,9 @@ RUN git clone "https://github.com/weidai11/cryptopp.git"
 WORKDIR cryptopp
 RUN make -f ./GNUmakefile
 RUN cp libcryptopp.a ../
+
 # install library
-# RUN make -f ./GNUmakefile install
+RUN make -f ./GNUmakefile install
 
 WORKDIR ../
 
