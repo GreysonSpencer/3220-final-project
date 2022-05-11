@@ -115,8 +115,8 @@ void AES::decrypt(std::string filename)
 
 //     std::cout << "plain text: " << plain << std::endl;
 
-//     /*********************************\
-//     \*********************************/
+//     
+//     
 
 //     try
 //     {
@@ -135,8 +135,8 @@ void AES::decrypt(std::string filename)
 //         exit(1);
 //     }
 
-//     /*********************************\
-//     \*********************************/
+//     
+//     
 
 //     std::cout << "key: ";
 //     encoder.Put(key, key.size());
@@ -153,8 +153,8 @@ void AES::decrypt(std::string filename)
 //     encoder.MessageEnd();
 //     std::cout << std::endl;
     
-//     /*********************************\
-//     \*********************************/
+//     
+//     
 
 //     try
 //     {
