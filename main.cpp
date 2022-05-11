@@ -6,16 +6,14 @@
 
 int main()
 {
-    FileIO *file = new FileIO("test.txt");
     AES *aes = new AES();
     Encryptor *enc = new Encryptor(aes);
 
-    std::string input = file->readFile();
+    enc->encrypt("test.exe");
 
-    std::string enc_input = enc->encrypt(input);
+    FileIO test("test.exe");
 
-    std::cout << enc_input << std::endl;
+    std::cout << test.readFile() << std::endl;
 
     delete enc;
-    delete file;
 }
