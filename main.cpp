@@ -14,4 +14,5 @@ int main()
     enc->encrypt();
 
     delete enc;
+    delete file;
 }
