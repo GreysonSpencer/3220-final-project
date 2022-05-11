@@ -11,7 +11,7 @@ class Decryptor {
         Decryptor(EncryptionStrategy *strategy);
         ~Decryptor();
         void changeStrategy(EncryptionStrategy *strategy);
-        void decrypt(std::string filename, std::string keyFilename);
+        void decrypt(std::string filename);
 };
 
 #endif
