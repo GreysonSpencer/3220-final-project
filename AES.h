@@ -25,8 +25,8 @@ class AES : public SymmetricEnc {
         int getPrivateKey();
         void setPrivateKey(int key);
     private:
-        CryptoPP::SecByteBlock IV;
-        CryptoPP::SecByteBlock key;
+        CryptoPP::SecByteBlock _IV;
+        CryptoPP::SecByteBlock _key;
 };
 
 #endif
