@@ -1,5 +1,43 @@
 #include "AES.h"
 
+std::string encrypt(std::string enc_string)
+{
+    using namespace CryptoPP;
+
+    AutoSeededRandomPool prng;
+    HexEncoder encoder (new FileSink(std::cout));
+
+    SecByteBlock key(CryptoPP::AES::DEFAULT_KEYLENGTH);
+    SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
+
+    prng.GenerateBlock(key, key.size());
+    prng.GenerateBlock(iv, iv.size());
+
+    std::string cipher;
+
+    try
+    {
+        CBC_Mode< CryptoPP::AES >::Encryption e;
+        e.SetKeyWithIV(key, key.size(), iv);
+
+        StringSource s(enc_string, true, 
+            new StreamTransformationFilter(e,
+                new StringSink(cipher)
+            ) // StreamTransformationFilter
+        ); // StringSource
+    }
+    catch(const Exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+        exit(1);
+    }
+}
+
+std::string decrypt(std::string dec_string)
+{
+
+}
+
 void AES::execute()
 {
     using namespace CryptoPP;
