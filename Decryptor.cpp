@@ -17,7 +17,7 @@ void Decryptor::changeStrategy(EncryptionStrategy *strategy)
     delete oldStrategy;
 }
 
-void Decryptor::decrypt(std::string filename, std::string keyFilename)
+void Decryptor::decrypt(std::string filename)
 {
-
+    _strategy->decrypt(filename);
 }
