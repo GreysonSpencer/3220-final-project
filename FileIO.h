@@ -5,6 +5,8 @@
 #include <iostream>
 #include <fstream>
 
+#include "cryptopp/secblock.h"
+
 class FileIO {
     private:
         std::string _filename;
@@ -20,6 +22,8 @@ class FileIO {
         std::string readFile();
         //Writes a file in the form of a string with no newlines
         void writeFile();
+
+        CryptoPP::SecByteBlock readKey(std::string filename);
 };
 
 #endif
