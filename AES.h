@@ -18,7 +18,9 @@
 class AES : public SymmetricEnc {
     public:
         //void execute();
+        // Use this constructor when you need to encrypt
         AES();
+        // Use this constructor when you need to decrypt
         AES(std::string keyFile);
         std::string encrypt(std::string enc_string);
         std::string decrypt(std::string dec_string);
