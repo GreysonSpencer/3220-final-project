@@ -30,7 +30,7 @@ std::string FileIO::readFile()
         std::cout << "Failed to open file\n";
         return "";
     }
-    
+
     std::string output;
     std::getline(input, output);
     return output;
@@ -38,5 +38,14 @@ std::string FileIO::readFile()
 
 void FileIO::writeFile()
 {
+    std::ofstream output;
+    output.open("enc" + _filename);
 
+    if(!output.is_open())
+    {
+        std::cout << "Failed to open file\n";
+        return;
+    }
+
+    output << _write_string;
 }
