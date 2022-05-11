@@ -5,7 +5,7 @@
 
 class FileIO {
     private:
-        std::string filename;
+        std::string _filename;
     public:
         FileIO(std::string filename);
         void setFilename(std::string filename);
