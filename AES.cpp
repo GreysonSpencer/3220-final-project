@@ -64,15 +64,37 @@ void AES::encrypt(std::string filename)
     outputCipher.writeFile();
 }
 
-std::string AES::decrypt(std::string dec_string)
+void AES::decrypt(std::string filename)
 {
-    // Step 1: need the initial vector
-
-    // Step 2: do the decryption
-
-    // Step 3: return the plaintext
+    using namespace CryptoPP;
     
-    return "Unimplemented, " + dec_string;
+    FileIO inputfile(filename);
+
+    std::string ciphertext = inputfile.readFile();
+    std::string plaintext;
+
+    try
+    {
+        CBC_Mode< CryptoPP::AES >::Decryption d;
+        d.SetKeyWithIV(_key, _key.size(), _IV);
+
+        StringSource s(ciphertext, true, 
+            new StreamTransformationFilter(d,
+                new StringSink(plaintext)
+            ) // StreamTransformationFilter
+        ); // StringSource
+
+        std::cout << "recovered text: " << plaintext << std::endl;
+    }
+    catch(const Exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+        exit(1);
+    }
+    
+    FileIO outputfile("decoded_text.txt");
+    outputfile.setWriteString(plaintext);
+    outputfile.writeFile();
 }
 
 // void AES::execute()
