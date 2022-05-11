@@ -14,3 +14,13 @@ std::string FileIO::getFilename()
 {
     return _filename;
 }
+
+std::string FileIO::readFile()
+{
+
+}
+
+void FileIO::writeFile()
+{
+
+}

@@ -10,6 +10,9 @@ class FileIO {
         FileIO(std::string filename);
         void setFilename(std::string filename);
         std::string getFilename();
+        
+        std::string readFile();
+        void writeFile();
 };
 
 #endif
