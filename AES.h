@@ -16,6 +16,8 @@
 class AES : public SymmetricEnc {
     public:
         void execute();
+        std::string encrypt(std::string enc_string);
+        std::string decrypt(std::string dec_string);
         int getPrivateKey();
         void setPrivateKey(int key);
 };
