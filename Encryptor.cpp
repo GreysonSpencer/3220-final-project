@@ -15,7 +15,7 @@ void Encryptor::changeStrategy(EncryptionStrategy *strategy)
     _strategy = strategy;
 }
 
-std::string Encryptor::encrypt(std::string enc_string)
+void Encryptor::encrypt(std::string filename)
 {
-    return _strategy->encrypt(enc_string);
+    _strategy->encrypt(filename);
 }

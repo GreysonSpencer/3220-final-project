@@ -11,7 +11,7 @@ class Encryptor {
         Encryptor(EncryptionStrategy *strategy);
         ~Encryptor();
         void changeStrategy(EncryptionStrategy *strategy);
-        std::string encrypt(std::string enc_string);
+        void encrypt(std::string filename);
 };
 
 #endif
