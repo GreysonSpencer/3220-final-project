@@ -27,7 +27,7 @@ std::string FileIO::readFile()
 
     if(!input.is_open())
     {
-        std::cout << "Failed to open file\n";
+        std::cout << "Failed to open file: " << _filename << std::endl;
         return "";
     }
 
@@ -43,7 +43,7 @@ void FileIO::writeFile()
 
     if(!output.is_open())
     {
-        std::cout << "Failed to open file\n";
+        std::cout << "Failed to open file: " << _filename << std::endl;
         return;
     }
 
@@ -57,7 +57,7 @@ CryptoPP::SecByteBlock FileIO::readKey()
 
     if(!input.is_open())
     {
-        std::cout << "Failed to open file\n";
+        std::cout << "Failed to open file: " << _filename << std::endl;
         CryptoPP::SecByteBlock emptyKey(0);
         return emptyKey;
     }
@@ -74,7 +74,7 @@ CryptoPP::SecByteBlock FileIO::readIV()
 
     if(!input.is_open())
     {
-        std::cout << "Failed to open file\n";
+        std::cout << "Failed to open file: " << _filename << std::endl;
         CryptoPP::SecByteBlock emptyKey(0);
         return emptyKey;
     }
@@ -95,7 +95,7 @@ void FileIO::writeKey(CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv)
 
     if(!output.is_open())
     {
-        std::cout << "Failed to open file\n";
+        std::cout << "Failed to open file: " << _filename << std::endl;
         return;
     }
     
