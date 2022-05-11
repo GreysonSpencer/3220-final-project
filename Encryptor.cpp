@@ -12,7 +12,9 @@ Encryptor::~Encryptor()
 
 void Encryptor::changeStrategy(EncryptionStrategy *strategy)
 {
+    EncryptionStrategy *oldStrategy = _strategy;
     _strategy = strategy;
+    delete oldStrategy;
 }
 
 void Encryptor::encrypt(std::string filename)
