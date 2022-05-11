@@ -2,17 +2,6 @@
 
 AES::AES()
 {
-
-}
-
-AES::AES(std::string keyFile)
-{
-    FileIO file(keyFile);
-    _key = file.readKey();
-}
-
-std::string AES::encrypt(std::string enc_string)
-{
     using namespace CryptoPP;
 
     AutoSeededRandomPool prng;
@@ -24,16 +13,33 @@ std::string AES::encrypt(std::string enc_string)
     prng.GenerateBlock(key, key.size());
     prng.GenerateBlock(iv, iv.size());
 
-    std::string cipher;
+    _key = key;
+    _IV = iv;
+}
+
+AES::AES(std::string keyFile)
+{
+    FileIO file(keyFile);
+    _key = file.readKey();
+}
+
+void AES::encrypt(std::string filename)
+{
+    using namespace CryptoPP;
+
+    FileIO fileInput(filename);
+
+    std::string enc_string = fileInput.readFile();
+    std::string ciphertext;
 
     try
     {
         CBC_Mode< CryptoPP::AES >::Encryption e;
-        e.SetKeyWithIV(key, key.size(), iv);
+        e.SetKeyWithIV(_key, _key.size(), _IV);
 
         StringSource s(enc_string, true, 
             new StreamTransformationFilter(e,
-                new StringSink(cipher)
+                new StringSink(ciphertext)
             ) // StreamTransformationFilter
         ); // StringSource
     }
@@ -42,7 +48,17 @@ std::string AES::encrypt(std::string enc_string)
         std::cerr << e.what() << std::endl;
         exit(1);
     }
-    return cipher;
+    
+    std::string keyFilename = filename + ".key";
+    FileIO outputKey(keyFilename);
+
+    outputKey.writeKey(_key);
+
+    std::string cipherFilename = filename + ".cipher";
+    FileIO outputCipher(cipherFilename);
+    outputCipher.setWriteString(ciphertext);
+
+    outputCipher.writeFile();
 }
 
 std::string AES::decrypt(std::string dec_string)
