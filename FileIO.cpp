@@ -67,7 +67,7 @@ CryptoPP::SecByteBlock FileIO::readKey()
     return key;
 }
 
-void FileIO::writeKey(CryptoPP::SecByteBlock key)
+void FileIO::writeKey(CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv)
 {
     std::ofstream output;
     output.open(_filename);
@@ -81,5 +81,11 @@ void FileIO::writeKey(CryptoPP::SecByteBlock key)
     for (int i = 0; i < key.size(); i++)
     {
         output << key.data()[i];
+    }
+    output << "\n";
+
+    for (int i = 0; i < iv.size(); i++)
+    {
+        output << iv.data()[i];
     }
 }
