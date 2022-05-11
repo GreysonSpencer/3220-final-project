@@ -21,7 +21,7 @@ WORKDIR ../
 
 # Clone repo and compile it
 RUN git clone "https://github.com/GreysonSpencer/3220-final-project.git" \
-    && mv libcryptopp.a "3220-final-project" \
+    # && mv libcryptopp.a "3220-final-project" \
     && cd "3220-final-project" \
     && make
 
