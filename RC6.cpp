@@ -59,7 +59,10 @@ void RC6::encrypt(std::string filename)
     FileIO keyFile(keyFilename);
 
     keyFile.writeKey(_key);
-    
+
+
+    // Convert IV to string and prepend to ciphertext
+    std::string iv = std::string((char*)_iv.data(), CryptoPP::RC6::BLOCKSIZE);
 }
 
 void RC6::decrypt(std::string filename)
