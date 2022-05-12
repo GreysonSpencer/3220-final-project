@@ -4,6 +4,7 @@
 #include "EncryptionStrategy.h"
 
 #include "cryptopp/rc6.h"
+#include "cryptopp/osrng.h"
 
 #include <string>
 #include <iostream>
