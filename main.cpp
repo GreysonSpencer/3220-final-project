@@ -46,6 +46,7 @@ int main(int argc, char* argv[])
 int menu()
 {
     bool exitFlag = false;
+    int selection = 0;
     while(!exitFlag)
     {
         std::cout << "<=========================>\n";
@@ -56,6 +57,7 @@ int menu()
         std::cout << "2. Decrypt\n";
         std::cout << "3. Help\n";
         std::cout << "Enter a number: ";
+        std::cin >> selection;
     }
 }
 
