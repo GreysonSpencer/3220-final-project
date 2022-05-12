@@ -52,25 +52,19 @@ void FileIO::writeFile()
 
 CryptoPP::SecByteBlock FileIO::readKey()
 {
-    // std::ifstream input;
-    // input.open(_filename);
+    std::ifstream stream(_filename, std::ios::binary);
 
-    // if(!input.is_open())
-    // {
-    //     std::cout << "Failed to open file: " << _filename << std::endl;
-    //     CryptoPP::SecByteBlock emptyKey(0);
-    //     return emptyKey;
-    // }
+    if(!stream.is_open())
+    {
+        std::cout << "Failed to open file: " << _filename << std::endl;
+        CryptoPP::SecByteBlock emptyKey(0);
+        return emptyKey;
+    }
 
-    // CryptoPP::SecByteBlock key(CryptoPP::AES::DEFAULT_KEYLENGTH);
-    // input >> key;
+    CryptoPP::SecByteBlock key(CryptoPP::AES::DEFAULT_KEYLENGTH);
+    CryptoPP::FileSource fs(stream, true, new CryptoPP::ArraySink(key.begin(), key.size()));
 
-    CryptoPP::SecByteBlock newKey(CryptoPP::AES::DEFAULT_KEYLENGTH);
-    CryptoPP::FileSource fs(_filename.c_str(), true, new CryptoPP::ArraySink(newKey.begin(), newKey.size()));
-
-
-
-    return newKey;
+    return key;
 }
 
 CryptoPP::SecByteBlock FileIO::readIV()
