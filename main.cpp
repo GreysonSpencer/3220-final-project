@@ -64,12 +64,15 @@ int menu()
             case 1:
                 // Encryption
             break;
+
             case 2:
                 // Decryption
             break;
+
             case 3:
                 // Help
             break;
+            
             default:
                 // Catchall
             break;
