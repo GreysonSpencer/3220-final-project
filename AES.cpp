@@ -38,26 +38,17 @@ void AES::encrypt(std::string filename)
 
     try
     {
-        CBC_Mode<CryptoPP::AES>::Encryption e;
-        e.SetKeyWithIV(_key, _key.size(), _IV);
+        CBC_Mode<CryptoPP::AES>::Encryption cbcEnc;
 
-        //StringSource s(enc_string, true, new StreamTransformationFilter(e, new StringSink(ciphertext)));
-        StringSource s(enc_string, true, 
-            new StreamTransformationFilter(e,
-                new StringSink(ciphertext)
-            ) // StreamTransformationFilter
-        ); // StringSource
+        // Set the key and initial vector
+        cbcEnc.SetKeyWithIV(_key, _key.size(), _IV);
 
-        //std::cout << "encoded text: " << ciphertext << std::endl;
+        // Take everything in the input, 
+        // transform it through the encryption scheme, 
+        // and then put it in the ciphertext string
+        StringSource s(enc_string, true, new StreamTransformationFilter(cbcEnc, new StringSink(ciphertext)));
 
-        // Print ciphertext
-        // std::cout << "Ciphertext: ";
-        // for (unsigned int i = 0; i < ciphertext.size(); i++)
-        // {
-        //     std::cout << "0x" << std::hex << (0xFF & static_cast<byte>(ciphertext[i])) << " ";
-        // }
-        // std::cout << std::endl << std::endl;
-        
+        // Encryption is done
     }
     catch(const Exception& e)
     {
