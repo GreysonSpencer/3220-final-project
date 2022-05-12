@@ -32,7 +32,9 @@ std::string FileIO::readFile()
     }
 
     std::string output;
-    std::getline(input, output);
+
+    // Read all of the input stream into the output string sink
+    CryptoPP::FileSource fs(input, true, new CryptoPP::StringSink(output));
     return output;
 }
 
