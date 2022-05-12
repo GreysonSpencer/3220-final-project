@@ -35,6 +35,9 @@ void RC6::encrypt(std::string filename)
     try
     {
         CBC_Mode<RC6>::Encryption filter;
+
+        // Set key and initial vector for filter
+        filter.SetKeyWithIV(_key, CryptoPP::RC6::DEFAULT_KEYLENGTH, _iv);
     }
     catch(const Exception& e)
     {
