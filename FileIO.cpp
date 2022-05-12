@@ -100,10 +100,9 @@ CryptoPP::SecByteBlock FileIO::readIV()
     return newIV;
 }
 
-void FileIO::writeKey(CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv)
+void FileIO::writeKey(CryptoPP::SecByteBlock key)
 {
-    std::ofstream output;
-    output.open(_filename);
+    std::ofstream output(_filename, std::ios::binary);
 
     if(!output.is_open())
     {
@@ -111,14 +110,9 @@ void FileIO::writeKey(CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv)
         return;
     }
     
+    CryptoPP::FileSink sink(output);
     for (unsigned int i = 0; i < key.size(); i++)
     {
-        output << key.data()[i];
-    }
-    output << "\n";
-
-    for (unsigned int i = 0; i < iv.size(); i++)
-    {
-        output << iv.data()[i];
+        sink.Put(key[i]);
     }
 }
