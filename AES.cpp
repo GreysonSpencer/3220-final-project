@@ -38,6 +38,24 @@ void AES::encrypt(std::string filename)
         CBC_Mode< CryptoPP::AES >::Encryption e;
         e.SetKeyWithIV(_key, _key.size(), _IV);
 
+        //Print key
+        std::cout << "enc Key: ";
+        for (unsigned int i = 0; i < _key.size(); i++)
+        {
+            std::cout << "0x" << std::hex << (0xFF & static_cast<byte>(_key[i])) << " ";
+        }
+        std::cout << std::endl;
+
+        // Print IV
+        std::cout << "enc IV: ";
+        for (unsigned int i = 0; i < _IV.size(); i++)
+        {
+            std::cout << "0x" << std::hex << (0xFF & static_cast<byte>(_IV[i])) << " ";
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
+
+        //StringSource s(enc_string, true, new StreamTransformationFilter(e, new StringSink(ciphertext)));
         StringSource s(enc_string, true, 
             new StreamTransformationFilter(e,
                 new StringSink(ciphertext)
