@@ -21,7 +21,7 @@ AES::AES(std::string keyFile)
 {
     FileIO file(keyFile);
     _key = file.readKey();
-    _IV = file.readIV();
+    _IV = CryptoPP::SecByteBlock(CryptoPP::AES::BLOCKSIZE);
 }
 
 void AES::encrypt(std::string filename)
@@ -141,7 +141,6 @@ void AES::decrypt(std::string filename)
     //Getting the IV
 
     std::string plaintext;
-
     try
     {
         CBC_Mode< CryptoPP::AES >::Decryption d;
