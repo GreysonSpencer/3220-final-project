@@ -86,16 +86,16 @@ void AES::decrypt(std::string filename)
     // Create a sink for the IV
     CryptoPP::ArraySink ivSink(_IV, _IV.size());
     
-    // Create the source from the full string
+    // Create the source from the imported string
     StringSource s(ivciphertext, false);
 
     // Attach a redirector to the sink
     s.Attach(new Redirector(ivSink));
 
-    // Pump one block from the source
+    // Pump one block from the source, putting the IV into the ivSink
     s.Pump(CryptoPP::AES::BLOCKSIZE);
 
-    // Create a new string sink and attach it to the source
+    // Create a new string sink and replace the ivSink on the source
     std::string ciphertext;
     s.Detach(new StringSink(ciphertext));
 
