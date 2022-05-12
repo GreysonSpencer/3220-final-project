@@ -58,6 +58,22 @@ int menu()
         std::cout << "3. Help\n";
         std::cout << "Enter a number: ";
         std::cin >> selection;
+
+        switch(selection)
+        {
+            case 1:
+                // Encryption
+            break;
+            case 2:
+                // Decryption
+            break;
+            case 3:
+                // Help
+            break;
+            default:
+                // Catchall
+            break;
+        }
     }
 }
 
