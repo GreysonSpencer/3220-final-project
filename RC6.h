@@ -15,6 +15,8 @@ class RC6 : public EncryptionStrategy {
     public:
         RC6();
         RC6(std::string keyFilename);
+        void encrypt(std::string filename);
+        void decrypt(std::string filename);
 };
 
 #endif
