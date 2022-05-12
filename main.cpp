@@ -134,6 +134,9 @@ int menu()
 
                         dec->decrypt(decFilename);
                         delete dec;
+                        
+                        std::cout << "Decrypted file is located at: decoded_text.txt\n";
+                        sleep(2);
                         break;
                     }
                 }
