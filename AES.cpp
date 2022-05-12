@@ -86,7 +86,11 @@ void AES::encrypt(std::string filename)
 
     std::string cipherFilename = filename + ".cipher";
     FileIO outputCipher(cipherFilename);
-    outputCipher.setWriteString(ciphertext);
+
+    //Convert IV to string and prepend it to the ciphertext
+    std::string iv = std::string((const char*)_IV.data(), _IV.size());
+    std::string ivCiphertext = iv + ciphertext;
+    outputCipher.setWriteString(ivCiphertext);
 
     outputCipher.writeFile();
 }
