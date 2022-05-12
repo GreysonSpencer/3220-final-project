@@ -11,6 +11,11 @@ int flags(int argc, char* argv[]);
 
 int main(int argc, char* argv[])
 {
+    for (int i = 0; i < argc; i++)
+    {
+        std::cout << argc << argv[i] << std::endl;
+    }
+    
     // Encryption
     AES *aes = new AES();
     Encryptor *enc = new Encryptor(aes);
@@ -87,9 +92,10 @@ int menu()
             break;
         }
     }
+    return 1;
 }
 
-int flags(int argc, char* argv[])
-{
+// int flags(int argc, char* argv[])
+// {
 
-}
+// }
