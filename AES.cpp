@@ -12,8 +12,8 @@ AES::AES()
 
     // Randomly generate the key and initial vector
     AutoSeededRandomPool prng;
-    prng.GenerateBlock(key, key.size());
-    prng.GenerateBlock(iv, iv.size());
+    prng.GenerateBlock(key, CryptoPP::AES::DEFAULT_KEYLENGTH);
+    prng.GenerateBlock(iv, CryptoPP::AES::BLOCKSIZE);
 
     _key = key;
     _IV = iv;
