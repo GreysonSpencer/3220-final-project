@@ -32,14 +32,13 @@ void RC6::encrypt(std::string filename)
 
     std::string plaintext = textFile.readFile();
 
+    std::string ciphertext;
     try
     {
         CBC_Mode<RC6>::Encryption filter;
 
         // Set key and initial vector for filter
         filter.SetKeyWithIV(_key, CryptoPP::RC6::DEFAULT_KEYLENGTH, _iv);
-
-        std::string ciphertext;
 
         // Take all the plaintext,
         // encrypt it with the filter,
