@@ -45,7 +45,11 @@ int main(int argc, char* argv[])
 
 int menu()
 {
-
+    bool exitFlag = false;
+    while(!exitFlag)
+    {
+        
+    }
 }
 
 int flags(int argc, char* argv[])
