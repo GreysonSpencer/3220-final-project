@@ -62,6 +62,12 @@ void RC6::encrypt(std::string filename)
 
     // Convert IV to string and prepend to ciphertext
     std::string iv = std::string((char*)_iv.data(), CryptoPP::RC6::BLOCKSIZE);
+    std::string ivCiphertext = iv + ciphertext;
+
+    // Write output to file
+    std::string outputFilename = filename + ".cipher";
+    FileIO outputFile(outputFilename);
+    outputFile.writeFile();
 }
 
 void RC6::decrypt(std::string filename)
