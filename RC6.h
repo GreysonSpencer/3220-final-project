@@ -2,6 +2,7 @@
 #define RC6_H
 
 #include "EncryptionStrategy.h"
+#include "FileIO.h"
 
 #include "cryptopp/rc6.h"
 #include "cryptopp/osrng.h"
