@@ -48,7 +48,7 @@ void RC6::encrypt(std::string filename)
     }
     catch(const Exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << "RC6 encryption failed, error: \n" <<  e.what() << '\n';
     }
     
 }
