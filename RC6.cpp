@@ -51,6 +51,13 @@ void RC6::encrypt(std::string filename)
         std::cerr << "RC6 encryption failed, error: \n" <<  e.what() << '\n';
         exit(1);
     }
+
+    std::string keyFilename;
+    keyFilename = filename + ".key";
+
+    FileIO keyFile(keyFilename);
+
+    keyFile.writeKey(_key);
     
 }
 
