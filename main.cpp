@@ -71,7 +71,14 @@ int menu()
             break;
 
             case 3:
-                // Help
+                std::cout << "<=========================>\n";
+                std::cout << "<=========================>\n";
+                std::cout << "Help information:";
+                std::cout << "This tool is used to encrypt single line text files with symmetric encryption schemes.\n";
+                std::cout << "Current implemented encryption schemes: \n";
+                std::cout << "AES encryption\n\n\n";
+                std::cout << "To use the menu, enter a number and press enter.";
+                sleep(5);
             break;
 
             default:
