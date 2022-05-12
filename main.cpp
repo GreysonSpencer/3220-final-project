@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 
     if(argc < 2)
     {
-        // Run the CL menu
+        menu();
     }
     else
     {
@@ -56,7 +56,7 @@ int menu()
     while(!exitFlag)
     {
         std::cout << "<=========================>\n";
-        std::cout << "Welcome to encryption menu:\n";
+        std::cout << "Welcome to insert name here:\n";
         std::cout << "<=========================>\n";
         std::cout << "Choose menu options for functionality or help for help: \n";
         std::cout << "1. Encrypt\n";
@@ -68,8 +68,43 @@ int menu()
         switch(selection)
         {
             case 1:
-                // Encryption
-            break;
+            {
+                std::cout << "<=========================>\n";
+                std::cout << "<=========================>\n";
+                std::cout << "What kind of encryption to you want to use?\n";
+                std::cout << "1. AES\n";
+                std::cout << "2. Back to main menu\n";
+                std::cout << "Enter a number: ";
+                int encSelection;
+                std::cin >> encSelection;
+                switch(encSelection)
+                {
+                    case 1:
+                    {
+                        std::string encFilename;
+                        std::cout << "Enter a filename to be encrypted with AES encryption: ";
+                        std::cin >> encFilename;
+
+                        AES *aes = new AES();
+                        Encryptor *enc = new Encryptor(aes);
+
+                        enc->encrypt(encFilename);
+                        delete enc;
+
+                        std::cout << "Encrypted file is called: " << encFilename << ".cipher\n";
+                        std::cout << "Encryption key is called: " << encFilename << ".key\n";
+                        break;
+                    }
+
+                    case 2:
+                    break;
+
+                    default:
+                        std::cout << "Selection " << encSelection << " is not a valid selection.\n";
+                    break;
+                }
+                break;
+            }
 
             case 2:
                 // Decryption
