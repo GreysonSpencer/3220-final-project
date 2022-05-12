@@ -102,23 +102,6 @@ void AES::decrypt(std::string filename)
     // Pump the rest of the string into the string sink
     s.PumpAll();
 
-    // std::cout << "dec Key: ";
-    // for (unsigned int i = 0; i < _key.size(); i++)
-    // {
-    //     std::cout << "0x" << std::hex << (0xFF & static_cast<byte>(_key[i])) << " ";
-    // }
-    // std::cout << std::endl;
-    // std::cout << std::endl;
-
-    // std::cout << "dec IV: ";
-    // for (unsigned int i = 0; i < _IV.size(); i++)
-    // {
-    //     std::cout << "0x" << std::hex << (0xFF & static_cast<byte>(_IV[i])) << " ";
-    // }
-    // std::cout << std::endl;
-    // std::cout << std::endl;
-
-    //Getting the IV
 
     std::string plaintext;
     try
