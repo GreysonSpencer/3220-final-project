@@ -2,15 +2,14 @@
 #define AES_H
 
 #include "SymmetricEnc.h"
+#include "FileIO.h"
+
 #include "cryptopp/cryptlib.h"
 #include "cryptopp/rijndael.h"
 #include "cryptopp/modes.h"
-
 #include "cryptopp/files.h"
 #include "cryptopp/osrng.h"
 #include "cryptopp/hex.h"
-
-#include "FileIO.h"
 
 #include <iostream>
 #include <string>
@@ -21,7 +20,7 @@ class AES : public SymmetricEnc {
         AES();
         // Use this constructor when you need to decrypt
         AES(std::string keyFile);
-        
+
         void encrypt(std::string filename);
         void decrypt(std::string filename);
     private:
