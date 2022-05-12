@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unistd.h>
 
 #include "AES.h"
 #include "Encryptor.h"
@@ -72,9 +73,10 @@ int menu()
             case 3:
                 // Help
             break;
-            
+
             default:
-                // Catchall
+                std::cout << "Selection " << selection << " is not a valid selection.\n";
+                sleep(2);
             break;
         }
     }
