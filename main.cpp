@@ -5,6 +5,9 @@
 #include "Decryptor.h"
 #include "FileIO.h"
 
+int menu();
+int flags(int argc, char* argv[]);
+
 int main(int argc, char* argv[])
 {
     // Encryption
@@ -38,4 +41,14 @@ int main(int argc, char* argv[])
     {
         // Run the flag detection
     }
+}
+
+int menu()
+{
+
+}
+
+int flags(int argc, char* argv[])
+{
+
 }
