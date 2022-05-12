@@ -56,16 +56,19 @@ void AES::encrypt(std::string filename)
         exit(1);
     }
     
+    // Create key file
     std::string keyFilename = filename + ".key";
     FileIO outputKey(keyFilename);
 
     outputKey.writeKey(_key);
 
+
+    // Create ciphertext file
     std::string cipherFilename = filename + ".cipher";
     FileIO outputCipher(cipherFilename);
 
     //Convert IV to string and prepend it to the ciphertext
-    std::string iv = std::string((const char*)_IV.data(), _IV.size());
+    std::string iv = std::string((char*)_IV.data(), _IV.size());
     std::string ivCiphertext = iv + ciphertext;
     outputCipher.setWriteString(ivCiphertext);
 
