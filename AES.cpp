@@ -99,9 +99,47 @@ void AES::decrypt(std::string filename)
 {
     using namespace CryptoPP;
     
+    //Read in the full string from the file
     FileIO inputfile(filename);
+    std::string ivciphertext = inputfile.readFile();
+    
+    // Create a sink for the IV
+    CryptoPP::ArraySink ivSink(_IV, _IV.size());
+    
+    // Create the source from the full string
+    StringSource s(ivciphertext, false);
 
-    std::string ciphertext = inputfile.readFile();
+    // Attach a redirector to the sink
+    s.Attach(new Redirector(ivSink));
+
+    // Pump one block from the source
+    s.Pump(CryptoPP::AES::BLOCKSIZE);
+
+    // Create a new string sink and attach it to the source
+    std::string ciphertext;
+    s.Detach(new StringSink(ciphertext));
+
+    // Pump the rest of the string into the string sink
+    s.PumpAll();
+
+    std::cout << "dec Key: ";
+    for (unsigned int i = 0; i < _key.size(); i++)
+    {
+        std::cout << "0x" << std::hex << (0xFF & static_cast<byte>(_key[i])) << " ";
+    }
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "dec IV: ";
+    for (unsigned int i = 0; i < _IV.size(); i++)
+    {
+        std::cout << "0x" << std::hex << (0xFF & static_cast<byte>(_IV[i])) << " ";
+    }
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    //Getting the IV
+
     std::string plaintext;
 
     try
