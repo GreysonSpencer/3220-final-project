@@ -29,4 +29,13 @@ int main(int argc, char* argv[])
 
     dec->decrypt("test.txt.cipher");
     delete dec;
+
+    if(argc < 2)
+    {
+        // Run the CL menu
+    }
+    else
+    {
+        // Run the flag detection
+    }
 }
