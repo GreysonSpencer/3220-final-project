@@ -4,12 +4,14 @@ AES::AES()
 {
     using namespace CryptoPP;
 
-    AutoSeededRandomPool prng;
-    HexEncoder encoder (new FileSink(std::cout));
-
+    // Create key and initial vector for encryption
+    // Key initialized with default key length
+    // IV initialized with default block size
     SecByteBlock key(CryptoPP::AES::DEFAULT_KEYLENGTH);
     SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
 
+    // Randomly generate the key and initial vector
+    AutoSeededRandomPool prng;
     prng.GenerateBlock(key, key.size());
     prng.GenerateBlock(iv, iv.size());
 
