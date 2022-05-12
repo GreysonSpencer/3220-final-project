@@ -17,15 +17,15 @@ int main(int argc, char* argv[])
     }
     
     // Encryption
-    AES *aes = new AES();
-    Encryptor *enc = new Encryptor(aes);
+    // AES *aes = new AES();
+    // Encryptor *enc = new Encryptor(aes);
 
-    enc->encrypt("test.txt");
-    delete enc;
+    // enc->encrypt("test.txt");
+    // delete enc;
 
-    FileIO test1("test.txt");
-    FileIO test2("test.txt.cipher");
-    FileIO test3("test.txt.key");
+    // FileIO test1("test.txt");
+    // FileIO test2("test.txt.cipher");
+    // FileIO test3("test.txt.key");
 
     //std::cout << test1.readFile() << std::endl;
     //std::cout << test2.readFile() << std::endl;
@@ -33,11 +33,11 @@ int main(int argc, char* argv[])
 
 
     // Decryption
-    AES *aesDec = new AES("test.txt.key");
-    Decryptor *dec = new Decryptor(aesDec);
+    // AES *aesDec = new AES("test.txt.key");
+    // Decryptor *dec = new Decryptor(aesDec);
 
-    dec->decrypt("test.txt.cipher");
-    delete dec;
+    // dec->decrypt("test.txt.cipher");
+    // delete dec;
 
     if(argc < 2)
     {
