@@ -147,7 +147,7 @@ int menu()
                 std::cout << "This tool is used to encrypt single line text files with symmetric encryption schemes.\n";
                 std::cout << "Current implemented encryption schemes: \n";
                 std::cout << "AES encryption\n\n\n";
-                std::cout << "To use the menu, enter a number and press enter.";
+                std::cout << "To use the menu, enter a number and press enter.\n";
                 sleep(5);
             break;
 
