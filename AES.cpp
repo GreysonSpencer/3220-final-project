@@ -123,6 +123,7 @@ void AES::decrypt(std::string filename)
         exit(1);
     }
     
+    // Write the output
     FileIO outputfile("decoded_text.txt");
     outputfile.setWriteString(plaintext);
     outputfile.writeFile();
