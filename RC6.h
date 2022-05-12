@@ -9,7 +9,9 @@
 #include <iostream>
 
 class RC6 : public EncryptionStrategy {
-
+    private:
+        CryptoPP::SecByteBlock _key;
+        CryptoPP::SecByteBlock _iv;
 };
 
 #endif
