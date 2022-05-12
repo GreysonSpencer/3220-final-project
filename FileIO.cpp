@@ -85,13 +85,19 @@ CryptoPP::SecByteBlock FileIO::readIV()
         return emptyKey;
     }
 
-    CryptoPP::SecByteBlock key(CryptoPP::AES::DEFAULT_KEYLENGTH);
-    input >> key;
+    // CryptoPP::SecByteBlock key(CryptoPP::AES::DEFAULT_KEYLENGTH);
+    // input >> key;
 
-    CryptoPP::SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
-    input >> iv;
+    // CryptoPP::SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
+    // input >> iv;
 
-    return iv;
+    CryptoPP::SecByteBlock newKey(CryptoPP::AES::DEFAULT_KEYLENGTH);
+    CryptoPP::FileSource keyfs(input, true, new CryptoPP::ArraySink(newKey.begin(), newKey.size()));
+
+    CryptoPP::SecByteBlock newIV(CryptoPP::AES::BLOCKSIZE);
+    CryptoPP::FileSource ivfs(input, true, new CryptoPP::ArraySink(newIV.begin(), newIV.size()));
+
+    return newIV;
 }
 
 void FileIO::writeKey(CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv)
