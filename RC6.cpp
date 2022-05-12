@@ -10,6 +10,9 @@ RC6::RC6()
     AutoSeededRandomPool rng;
     rng.GenerateBlock(keyBlock, CryptoPP::RC6::DEFAULT_KEYLENGTH);
     rng.GenerateBlock(ivBlock, CryptoPP::RC6::BLOCKSIZE);
+
+    _key = keyBlock;
+    _iv = ivBlock;
 }
 
 RC6::RC6(std::string keyFilename)
