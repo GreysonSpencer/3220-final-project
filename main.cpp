@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 
     if(argc < 2)
     {
-        menu();
+        return menu();
     }
     else
     {
@@ -62,6 +62,7 @@ int menu()
         std::cout << "1. Encrypt\n";
         std::cout << "2. Decrypt\n";
         std::cout << "3. Help\n";
+        std::cout << "4. Exit\n";
         std::cout << "Enter a number: ";
         std::cin >> selection;
 
@@ -154,6 +155,12 @@ int menu()
                 std::cout << "AES encryption\n\n";
                 std::cout << "To use the menu, enter a number and press enter.\n";
                 sleep(5);
+            break;
+
+            case 4:
+                std::cout << "Exiting encryption program...\n";
+                sleep(2);
+                return EXIT_SUCCESS;
             break;
 
             default:
