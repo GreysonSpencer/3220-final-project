@@ -72,5 +72,8 @@ void RC6::encrypt(std::string filename)
 
 void RC6::decrypt(std::string filename)
 {
+    using namespace CryptoPP;
 
+    FileIO ciphertextFile(filename);
+    std::string ivCiphertext = ciphertextFile.readFile();
 }
