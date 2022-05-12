@@ -62,7 +62,16 @@ void AES::encrypt(std::string filename)
             ) // StreamTransformationFilter
         ); // StringSource
 
-        std::cout << "encoded text: " << ciphertext << std::endl;
+        //std::cout << "encoded text: " << ciphertext << std::endl;
+
+        // Print ciphertext
+        std::cout << "Ciphertext: ";
+        for (unsigned int i = 0; i < ciphertext.size(); i++)
+        {
+            std::cout << "0x" << std::hex << (0xFF & static_cast<byte>(ciphertext[i])) << " ";
+        }
+        std::cout << std::endl << std::endl;
+        
     }
     catch(const Exception& e)
     {
