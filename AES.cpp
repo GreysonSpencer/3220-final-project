@@ -128,13 +128,3 @@ void AES::decrypt(std::string filename)
     outputfile.setWriteString(plaintext);
     outputfile.writeFile();
 }
-
-int AES::getPrivateKey()
-{
-    return privateKey;
-}
-
-void AES::setPrivateKey(int key)
-{
-    privateKey = key;
-}

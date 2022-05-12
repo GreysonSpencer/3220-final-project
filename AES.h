@@ -24,8 +24,6 @@ class AES : public SymmetricEnc {
         AES(std::string keyFile);
         void encrypt(std::string filename);
         void decrypt(std::string filename);
-        int getPrivateKey();
-        void setPrivateKey(int key);
     private:
         CryptoPP::SecByteBlock _IV;
         CryptoPP::SecByteBlock _key;
