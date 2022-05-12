@@ -52,6 +52,7 @@ void RC6::encrypt(std::string filename)
         exit(1);
     }
 
+    // Write key to key file
     std::string keyFilename;
     keyFilename = filename + ".key";
 
