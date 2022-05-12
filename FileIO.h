@@ -11,6 +11,7 @@
 #include "cryptopp/files.h"
 #include "cryptopp/osrng.h"
 #include "cryptopp/hex.h"
+#include "cryptopp/files.h"
 
 class FileIO {
     private:
