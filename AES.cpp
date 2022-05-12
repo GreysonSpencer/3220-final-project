@@ -82,7 +82,7 @@ void AES::encrypt(std::string filename)
     std::string keyFilename = filename + ".key";
     FileIO outputKey(keyFilename);
 
-    outputKey.writeKey(_key, _IV);
+    outputKey.writeKey(_key);
 
     std::string cipherFilename = filename + ".cipher";
     FileIO outputCipher(cipherFilename);
