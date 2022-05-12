@@ -23,6 +23,7 @@ AES::AES(std::string keyFile)
 {
     FileIO file(keyFile);
     _key = file.readKey();
+    // Initialize the IV to the default block size
     _IV = CryptoPP::SecByteBlock(CryptoPP::AES::BLOCKSIZE);
 }
 
