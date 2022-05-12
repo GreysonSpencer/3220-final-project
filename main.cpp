@@ -119,7 +119,23 @@ int menu()
                 std::cin >> decSelection;
                 switch(decSelection)
                 {
-                    
+                    case 1:
+                    {
+                        std::string decFilename;
+                        std::cout << "Enter the file you wish to decrypt: ";
+                        std::cin >> decFilename;
+
+                        std::string decKey;
+                        std::cout << "Enter the file that contains the private key: ";
+                        std::cin >> decKey;
+
+                        AES *aesDec = new AES(decKey);
+                        Decryptor *dec = new Decryptor(aesDec);
+
+                        dec->decrypt(decFilename);
+                        delete dec;
+                        break;
+                    }
                 }
                 break;
             }
