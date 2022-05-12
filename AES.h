@@ -14,7 +14,7 @@
 #include <iostream>
 #include <string>
 
-class AES : public SymmetricEnc {
+class AES : public EncryptionStrategy {
     public:
         // Use this constructor when you need to encrypt
         AES();
