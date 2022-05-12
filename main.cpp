@@ -107,8 +107,21 @@ int menu()
             }
 
             case 2:
-                // Decryption
-            break;
+            {
+                std::cout << "<=========================>\n";
+                std::cout << "<=========================>\n";
+                std::cout << "What kind of encryption was used to encrypt the file?\n";
+                std::cout << "1. AES\n";
+                std::cout << "2. Back to main menu\n";
+                std::cout << "Enter a number: ";
+                int decSelection;
+                std::cin >> decSelection;
+                switch(decSelection)
+                {
+                    
+                }
+                break;
+            }
 
             case 3:
                 std::cout << "<=========================>\n";
