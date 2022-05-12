@@ -34,7 +34,7 @@ void RC6::encrypt(std::string filename)
 
     try
     {
-        
+        CBC_Mode<RC6>::Encryption filter;
     }
     catch(const Exception& e)
     {
