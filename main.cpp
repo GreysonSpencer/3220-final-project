@@ -5,7 +5,7 @@
 #include "Decryptor.h"
 #include "FileIO.h"
 
-int main()
+int main(int argc, char* argv[])
 {
     // Encryption
     AES *aes = new AES();
