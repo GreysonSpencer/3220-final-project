@@ -93,6 +93,7 @@ int menu()
 
                         std::cout << "Encrypted file is called: " << encFilename << ".cipher\n";
                         std::cout << "Encryption key is called: " << encFilename << ".key\n";
+                        sleep(3);
                         break;
                     }
 
@@ -102,6 +103,7 @@ int menu()
 
                     default:
                         std::cout << "Selection " << encSelection << " is not a valid selection.\n";
+                        sleep(1);
                     break;
                 }
                 break;
