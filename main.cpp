@@ -48,7 +48,14 @@ int menu()
     bool exitFlag = false;
     while(!exitFlag)
     {
-        
+        std::cout << "<=========================>\n";
+        std::cout << "Welcome to encryption menu:\n";
+        std::cout << "<=========================>\n";
+        std::cout << "Choose menu options for functionality or help for help: \n";
+        std::cout << "1. Encrypt\n";
+        std::cout << "2. Decrypt\n";
+        std::cout << "3. Help\n";
+        std::cout << "Enter a number: ";
     }
 }
 
