@@ -17,7 +17,11 @@ RC6::RC6()
 
 RC6::RC6(std::string keyFilename)
 {
+    using namespace CryptoPP;
 
+    FileIO keyFile(keyFilename);
+    _key = keyFile.readKey();
+    _iv = SecByteBlock(CryptoPP::RC6::BLOCKSIZE);
 }
 
 void RC6::encrypt(std::string filename)
