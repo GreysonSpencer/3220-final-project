@@ -17,7 +17,6 @@
 
 class AES : public SymmetricEnc {
     public:
-        //void execute();
         // Use this constructor when you need to encrypt
         AES();
         // Use this constructor when you need to decrypt
