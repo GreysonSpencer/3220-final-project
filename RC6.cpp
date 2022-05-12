@@ -26,7 +26,21 @@ RC6::RC6(std::string keyFilename)
 
 void RC6::encrypt(std::string filename)
 {
+    using namespace CryptoPP;
 
+    FileIO textFile(filename);
+
+    std::string plaintext = textFile.readFile();
+
+    try
+    {
+        
+    }
+    catch(const Exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 }
 
 void RC6::decrypt(std::string filename)
