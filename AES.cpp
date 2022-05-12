@@ -52,7 +52,7 @@ void AES::encrypt(std::string filename)
     }
     catch(const Exception& e)
     {
-        std::cerr << "Encryption with AES failed, error: " << e.what() << std::endl;
+        std::cerr << "Encryption with AES failed, error: \n" << e.what() << std::endl;
         exit(1);
     }
     
@@ -119,7 +119,7 @@ void AES::decrypt(std::string filename)
     }
     catch(const Exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cerr << "Failed to decrypt with AES, error message: \n" << e.what() << std::endl;
         exit(1);
     }
     
