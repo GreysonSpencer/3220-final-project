@@ -84,6 +84,7 @@ int menu()
                 {
                     case 1:
                     {
+                        // AES
                         std::string encFilename;
                         std::cout << "Enter a filename to be encrypted with AES encryption: ";
                         std::cin >> encFilename;
@@ -102,6 +103,7 @@ int menu()
 
                     case 2:
                     {
+                        // RC6
                         std::string encFilename;
                         std::cout << "Enter a filename to be encrypted with RC6 encryption: ";
                         std::cin >> encFilename;
@@ -145,6 +147,7 @@ int menu()
                 {
                     case 1:
                     {
+                        // AES
                         std::string decFilename;
                         std::cout << "Enter the file you wish to decrypt: ";
                         std::cin >> decFilename;
@@ -166,6 +169,7 @@ int menu()
 
                     case 2:
                     {
+                        // RC6
                         std::string decFilename;
                         std::cout << "Enter the file you wish to decrypt: ";
                         std::cin >> decFilename;
@@ -186,6 +190,7 @@ int menu()
                     }
 
                     case 3:
+                        // Back to main loop
                     break;
 
                     default:
