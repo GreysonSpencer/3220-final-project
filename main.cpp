@@ -215,6 +215,14 @@ int flags(int argc, char* argv[])
         {
             
         }
+        else if(input == "-h")
+        {
+
+        }
+        else
+        {
+            // invalid input
+        }
     }
     
 }
