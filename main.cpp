@@ -103,7 +103,7 @@ int menu()
                     case 2:
                     {
                         std::string encFilename;
-                        std::cout << "Enter a filename to be encrypted with AES encryption: ";
+                        std::cout << "Enter a filename to be encrypted with RC6 encryption: ";
                         std::cin >> encFilename;
 
                         RC6 *rc6 = new RC6();
