@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     }
     else
     {
-        // Run the flag detection
+        return flags(argc, argv);
     }
 }
 
@@ -202,7 +202,16 @@ int menu()
     return 1;
 }
 
-// int flags(int argc, char* argv[])
-// {
-
-// }
+// Command line flags support:
+// 1 option when showing help
+// 2 options when encrypting: enc type and file name
+// 3 options when decrypting: dec type and file name and key file name
+int flags(int argc, char* argv[])
+{
+    // More flags than allowed
+    if(argc > 4)
+    {
+        std::cout << "Too many arguments provided, exiting...\n";
+        return EXIT_FAILURE;
+    }
+}
