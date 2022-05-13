@@ -63,6 +63,7 @@ CryptoPP::SecByteBlock FileIO::readKey()
         return emptyKey;
     }
 
+    // Create the key space and then pump it in from the file
     CryptoPP::SecByteBlock key(CryptoPP::AES::DEFAULT_KEYLENGTH);
     CryptoPP::FileSource fs(stream, true, new CryptoPP::ArraySink(key.begin(), key.size()));
 
