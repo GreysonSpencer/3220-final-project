@@ -71,14 +71,7 @@ int menu()
                         std::cout << "Enter a filename to be encrypted with AES encryption: ";
                         std::cin >> encFilename;
 
-                        AES *aes = new AES();
-                        Encryptor *enc = new Encryptor(aes);
-
-                        enc->encrypt(encFilename);
-                        delete enc;
-
-                        std::cout << "Encrypted file is called: " << encFilename << ".cipher\n";
-                        std::cout << "Encryption key is called: " << encFilename << ".key\n";
+                        aesEnc(encFilename);
                         sleep(3);
                         break;
                     }
@@ -235,7 +228,14 @@ int flags(int argc, char* argv[])
 
 int aesEnc(std::string filename)
 {
+    AES *aes = new AES();
+    Encryptor *enc = new Encryptor(aes);
 
+    enc->encrypt(filename);
+    delete enc;
+
+    std::cout << "Encrypted file is called: " << filename << ".cipher\n";
+    std::cout << "Encryption key is called: " << filename << ".key\n";
 }
 
 int aesDec(std::string filename, std::string keyFilename)
