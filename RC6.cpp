@@ -100,4 +100,29 @@ void RC6::decrypt(std::string filename)
 
     // Pump the rest of the string into the string sink
     source.PumpAll();
+
+    std::string plaintext;
+    try
+    {
+        // Create filter
+        CBC_Mode<CryptoPP::RC6>::Decryption filter;
+
+        // Set key and initial vector
+        filter.SetKeyWithIV(_key, CryptoPP::RC6::DEFAULT_KEYLENGTH, _iv);
+
+        // Source from the ciphertext
+        // Filter with RC6
+        // Sink into plaintext
+        StringSource s(ciphertext, true, new StreamTransformationFilter(filter, new StringSink(plaintext)));
+    }
+    catch(const Exception& e)
+    {
+        std::cerr << "Failed to decrypt with RC6, error message: \n" << e.what() << std::endl;
+        exit(1);
+    }
+    
+    // Write the output
+    FileIO outputfile("decoded_text.txt");
+    outputfile.setWriteString(plaintext);
+    outputfile.writeFile();
 }
