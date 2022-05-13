@@ -238,16 +238,22 @@ int flags(int argc, char* argv[])
                     else
                     {
                         // Key file wrong
+                        std::cout << "Key file must be in the format of <filename>.txt.key\n";
+                        return EXIT_FAILURE;
                     }
                 }
                 else
                 {
                     // Cipher file wrong
+                    std::cout << "Cipher file must be in the format of <filename>.txt.cipher\n";
+                    return EXIT_FAILURE;
                 }
             }
             else
             {
                 // Not enough inputs
+                std::cout << "-aesD requires a cipher file and a key file following the argument, decryption failed.\n";
+                return EXIT_FAILURE;
             }
         }
         else if(input == "-rc6E")
