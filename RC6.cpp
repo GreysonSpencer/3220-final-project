@@ -2,6 +2,7 @@
 
 RC6::RC6()
 {
+    // Create the new key and iv and assign them to a random value
     using namespace CryptoPP;
 
     SecByteBlock keyBlock(CryptoPP::RC6::DEFAULT_KEYLENGTH);
