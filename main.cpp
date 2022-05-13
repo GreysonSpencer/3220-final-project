@@ -2,6 +2,7 @@
 #include <unistd.h>
 
 #include "AES.h"
+#include "RC6.h"
 #include "Encryptor.h"
 #include "Decryptor.h"
 #include "FileIO.h"
@@ -74,6 +75,7 @@ int menu()
                 std::cout << "<=========================>\n";
                 std::cout << "What kind of encryption to you want to use?\n";
                 std::cout << "1. AES\n";
+                std::cout << "2. RC6\n";
                 std::cout << "2. Back to main menu\n";
                 std::cout << "Enter a number: ";
                 int encSelection;
@@ -99,6 +101,24 @@ int menu()
                     }
 
                     case 2:
+                    {
+                        std::string encFilename;
+                        std::cout << "Enter a filename to be encrypted with AES encryption: ";
+                        std::cin >> encFilename;
+
+                        RC6 *rc6 = new RC6();
+                        Encryptor *enc = new Encryptor(rc6);
+
+                        enc->encrypt(encFilename);
+                        delete enc;
+
+                        std::cout << "Encrypted file is called: " << encFilename << ".cipher\n";
+                        std::cout << "Encryption key is called: " << encFilename << ".key\n";
+                        sleep(3);
+                        break;
+                    }
+                    
+                    case 3:
                         //Back to main loop
                     break;
 
