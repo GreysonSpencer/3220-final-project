@@ -1,8 +1,14 @@
 #include <gtest/gtest.h>
 #include "AES.h"
+#include "AES.cpp"
 #include "RC6.h"
+#include "RC6.cpp"
 #include "Encryptor.h"
+#include "Encryptor.cpp"
 #include "Decryptor.h"
+#include "Decryptor.cpp"
+#include "FileIO.h"
+#include "FileIO.cpp"
 #include <fstream>
 
 TEST(AESEncryption, EncryptionDecryption)
@@ -32,7 +38,7 @@ TEST(AESEncryption, EncryptionDecryption)
     std::string output;
     std::ifstream outputstream("decoded_text.txt");
 
-    outputstream >> output;
+    std::getline(outputstream, output);
 
     EXPECT_EQ(testString, output);
 }
@@ -64,7 +70,7 @@ TEST(RC6Encryption, EncryptionDecryption)
     std::string output;
     std::ifstream outputstream("decoded_text.txt");
 
-    outputstream >> output;
+    std::getline(outputstream, output);
 
     EXPECT_EQ(testString, output);
 }
