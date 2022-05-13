@@ -9,6 +9,11 @@
 
 int menu();
 int flags(int argc, char* argv[]);
+int aesEnc(std::string filename);
+int aesDec(std::string filename, std::string keyFilename);
+int rc6Enc(std::string filename);
+int rc6Dec(std::string filename, std::string keyFilename);
+
 
 int main(int argc, char* argv[])
 {
@@ -222,8 +227,9 @@ int flags(int argc, char* argv[])
         input = argv[i];
         if(input == "-aesE")
         {
-            
+
         }
     }
     
 }
+
