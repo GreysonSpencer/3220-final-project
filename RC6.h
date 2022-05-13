@@ -6,6 +6,7 @@
 
 #include "cryptopp/rc6.h"
 #include "cryptopp/osrng.h"
+#include "cryptopp/modes.h"
 
 #include <string>
 #include <iostream>
