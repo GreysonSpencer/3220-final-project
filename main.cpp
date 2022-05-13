@@ -17,11 +17,6 @@ int rc6Dec(std::string filename, std::string keyFilename);
 
 int main(int argc, char* argv[])
 {
-    for (int i = 0; i < argc; i++)
-    {
-        std::cout << argc << argv[i] << std::endl;
-    }
-
     if(argc < 2)
     {
         return menu();
