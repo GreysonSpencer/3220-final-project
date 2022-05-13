@@ -217,6 +217,7 @@ int aesEnc(std::string filename)
 
     std::cout << "Encrypted file is called: " << filename << ".cipher\n";
     std::cout << "Encryption key is called: " << filename << ".key\n";
+    return EXIT_SUCCESS;
 }
 
 int aesDec(std::string filename, std::string keyFilename)
@@ -228,6 +229,7 @@ int aesDec(std::string filename, std::string keyFilename)
     delete dec;
                         
     std::cout << "Decrypted file is located at: decoded_text.txt\n";
+    return EXIT_SUCCESS;
 }
 
 int rc6Enc(std::string filename)
@@ -240,6 +242,7 @@ int rc6Enc(std::string filename)
 
     std::cout << "Encrypted file is called: " << filename << ".cipher\n";
     std::cout << "Encryption key is called: " << filename << ".key\n";
+    return EXIT_SUCCESS;
 }
 
 int rc6Dec(std::string filename, std::string keyFilename)
@@ -251,4 +254,5 @@ int rc6Dec(std::string filename, std::string keyFilename)
     delete dec;
                         
     std::cout << "Decrypted file is located at: decoded_text.txt\n";
+    return EXIT_SUCCESS;
 }
