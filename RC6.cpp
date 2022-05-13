@@ -18,6 +18,7 @@ RC6::RC6()
 
 RC6::RC6(std::string keyFilename)
 {
+    // Read in key and initialize iv with the right size
     using namespace CryptoPP;
 
     FileIO keyFile(keyFilename);
