@@ -16,7 +16,9 @@ class RC6 : public EncryptionStrategy {
         CryptoPP::SecByteBlock _key;
         CryptoPP::SecByteBlock _iv;
     public:
+        // Use this constructor for encryption
         RC6();
+        // Use this constructor for decryption
         RC6(std::string keyFilename);
         void encrypt(std::string filename);
         void decrypt(std::string filename);
