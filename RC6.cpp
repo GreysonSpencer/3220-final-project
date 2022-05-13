@@ -67,6 +67,8 @@ void RC6::encrypt(std::string filename)
     // Write output to file
     std::string outputFilename = filename + ".cipher";
     FileIO outputFile(outputFilename);
+
+    outputFile.setWriteString(ivCiphertext);
     outputFile.writeFile();
 }
 
