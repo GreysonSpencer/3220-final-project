@@ -80,6 +80,7 @@ void FileIO::writeKey(CryptoPP::SecByteBlock key)
         return;
     }
     
+    // Create a sink on the ofstream and then put each byte into the file
     CryptoPP::FileSink sink(output);
     for (unsigned int i = 0; i < key.size(); i++)
     {
