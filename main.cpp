@@ -136,7 +136,8 @@ int menu()
                 std::cout << "<=========================>\n";
                 std::cout << "What kind of encryption was used to encrypt the file?\n";
                 std::cout << "1. AES\n";
-                std::cout << "2. Back to main menu\n";
+                std::cout << "2. RC6\n";
+                std::cout << "3. Back to main menu\n";
                 std::cout << "Enter a number: ";
                 int decSelection;
                 std::cin >> decSelection;
