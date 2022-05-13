@@ -280,7 +280,38 @@ int flags(int argc, char* argv[])
         }
         else if(input == "-rc6D")
         {
-            // RC6 decryption
+            if(i+2 < argc)
+            {
+                i++;
+                std::string decFilename = argv[i];
+                i++;
+                std::string keyFilename = argv[i];
+                if(decFilename.find(".txt.cipher") != std::string::npos)
+                {
+                    if(keyFilename.find(".txt.key") != std::string::npos)
+                    {
+                        return rc6Dec(decFilename, keyFilename);
+                    }
+                    else
+                    {
+                        // Key file wrong
+                        std::cout << "Key file must be in the format of <filename>.txt.key\n";
+                        return EXIT_FAILURE;
+                    }
+                }
+                else
+                {
+                    // Cipher file wrong
+                    std::cout << "Cipher file must be in the format of <filename>.txt.cipher\n";
+                    return EXIT_FAILURE;
+                }
+            }
+            else
+            {
+                // Not enough inputs
+                std::cout << "-rc6D requires a cipher file and a key file following the argument, decryption failed.\n";
+                return EXIT_FAILURE;
+            }
         }
         else if(input == "-h")
         {
