@@ -74,13 +74,10 @@ void RC6::decrypt(std::string filename)
 {
     using namespace CryptoPP;
 
+    //Read in the full string from the file
     FileIO ciphertextFile(filename);
     std::string ivCiphertext = ciphertextFile.readFile();
 
-    //Read in the full string from the file
-    FileIO inputFile(filename);
-    std::string ivCiphertext = inputFile.readFile();
-    
     // Create a sink for the IV
     CryptoPP::ArraySink ivSink(_iv, CryptoPP::RC6::BLOCKSIZE);
     
