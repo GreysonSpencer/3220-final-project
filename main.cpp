@@ -227,7 +227,25 @@ int flags(int argc, char* argv[])
         }
         else if(input == "-rc6E")
         {
-            // RC6 encryption
+            if(i+1 < argc)
+            {
+                i++;
+                std::string encFilename = argv[i];
+                if(encFilename.find(".txt") != std::string::npos)
+                {
+                    return rc6Enc(encFilename);
+                }
+                else
+                {
+                    std::cout << "-rc6E requires a text file following the flag, encryption failed.\n";
+                    return EXIT_FAILURE;
+                }
+            }
+            else
+            {
+                std::cout << "-rc6E requires a text file following the flag, encryption failed.\n";
+                return EXIT_FAILURE;
+            }
         }
         else if(input == "-rc6D")
         {
