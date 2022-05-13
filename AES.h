@@ -1,7 +1,7 @@
 #ifndef AES_H
 #define AES_H
 
-#include "SymmetricEnc.h"
+#include "EncryptionStrategy.h"
 #include "FileIO.h"
 
 #include "cryptopp/cryptlib.h"
