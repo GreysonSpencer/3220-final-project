@@ -201,23 +201,23 @@ int flags(int argc, char* argv[])
         input = argv[i];
         if(input == "-aesE")
         {
-
+            // AES encryption
         }
         else if(input == "-aesD")
         {
-
+            // AES decryption
         }
         else if(input == "-rc6E")
         {
-
+            // RC6 encryption
         }
         else if(input == "-rc6D")
         {
-            
+            // RC6 decryption
         }
         else if(input == "-h")
         {
-
+            // Help info
         }
         else
         {
