@@ -203,6 +203,18 @@ int flags(int argc, char* argv[])
         {
 
         }
+        else if(input == "-aesD")
+        {
+
+        }
+        else if(input == "-rc6E")
+        {
+
+        }
+        else if(input == "-rc6D")
+        {
+            
+        }
     }
     
 }
