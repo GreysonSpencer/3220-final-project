@@ -106,16 +106,15 @@ void AES::decrypt(std::string filename)
     std::string plaintext;
     try
     {
-        CBC_Mode< CryptoPP::AES >::Decryption d;
-        d.SetKeyWithIV(_key, _key.size(), _IV);
+        CBC_Mode<CryptoPP::AES>::Decryption filter;
+        filter.SetKeyWithIV(_key, _key.size(), _IV);
 
-        StringSource s(ciphertext, true, 
-            new StreamTransformationFilter(d,
-                new StringSink(plaintext)
-            ) // StreamTransformationFilter
-        ); // StringSource
+        // Take the ciphertext,
+        // filter it through the decryptor,
+        // then put it in the plaintext string
+        StringSource s(ciphertext, true, new StreamTransformationFilter(filter,new StringSink(plaintext)));
 
-        // std::cout << "recovered text: " << plaintext << std::endl;
+        // Decryption done
     }
     catch(const Exception& e)
     {
