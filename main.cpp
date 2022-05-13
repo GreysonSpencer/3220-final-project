@@ -221,7 +221,8 @@ int flags(int argc, char* argv[])
         }
         else
         {
-            // invalid input
+            std::cout << "Invalid arguments, try running with \"-h\" for help.\n";
+            return EXIT_FAILURE;
         }
     }
     
