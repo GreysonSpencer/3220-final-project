@@ -166,6 +166,22 @@ int menu()
 
                     case 2:
                     {
+                        std::string decFilename;
+                        std::cout << "Enter the file you wish to decrypt: ";
+                        std::cin >> decFilename;
+
+                        std::string decKey;
+                        std::cout << "Enter the file that contains the private key: ";
+                        std::cin >> decKey;
+
+                        RC6 *rc6Dec = new RC6(decKey);
+                        Decryptor *dec = new Decryptor(rc6Dec);
+
+                        dec->decrypt(decFilename);
+                        delete dec;
+                        
+                        std::cout << "Decrypted file is located at: decoded_text.txt\n";
+                        sleep(2);
                         break;
                     }
 
