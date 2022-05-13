@@ -214,4 +214,10 @@ int flags(int argc, char* argv[])
         std::cout << "Too many arguments provided, exiting...\n";
         return EXIT_FAILURE;
     }
+
+    for (int i = 1; i < argc; i++)
+    {
+        
+    }
+    
 }
