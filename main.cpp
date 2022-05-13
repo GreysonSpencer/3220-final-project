@@ -223,7 +223,32 @@ int flags(int argc, char* argv[])
         }
         else if(input == "-aesD")
         {
-            // AES decryption
+            if(i+2 < argc)
+            {
+                i++;
+                std::string decFilename = argv[i];
+                i++;
+                std::string keyFilename = argv[i];
+                if(decFilename.find(".txt.cipher") != std::string::npos)
+                {
+                    if(keyFilename.find(".txt.key") != std::string::npos)
+                    {
+                        
+                    }
+                    else
+                    {
+                        // Key file wrong
+                    }
+                }
+                else
+                {
+                    // Cipher file wrong
+                }
+            }
+            else
+            {
+                // Not enough inputs
+            }
         }
         else if(input == "-rc6E")
         {
