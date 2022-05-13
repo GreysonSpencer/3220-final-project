@@ -215,9 +215,15 @@ int flags(int argc, char* argv[])
         return EXIT_FAILURE;
     }
 
+    std::string input = "";
+
     for (int i = 1; i < argc; i++)
     {
-        
+        input = argv[i];
+        if(input == "-aesE")
+        {
+            
+        }
     }
     
 }
