@@ -124,13 +124,7 @@ int menu()
                         std::cout << "Enter the file that contains the private key: ";
                         std::cin >> decKey;
 
-                        AES *aesDec = new AES(decKey);
-                        Decryptor *dec = new Decryptor(aesDec);
-
-                        dec->decrypt(decFilename);
-                        delete dec;
-                        
-                        std::cout << "Decrypted file is located at: decoded_text.txt\n";
+                        aesDec(decFilename, decKey);
                         sleep(2);
                         break;
                     }
@@ -233,7 +227,13 @@ int aesEnc(std::string filename)
 
 int aesDec(std::string filename, std::string keyFilename)
 {
+    AES *aesDec = new AES(keyFilename);
+    Decryptor *dec = new Decryptor(aesDec);
 
+    dec->decrypt(filename);
+    delete dec;
+                        
+    std::cout << "Decrypted file is located at: decoded_text.txt\n";
 }
 
 int rc6Enc(std::string filename)
