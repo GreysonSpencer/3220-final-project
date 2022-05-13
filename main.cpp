@@ -140,13 +140,7 @@ int menu()
                         std::cout << "Enter the file that contains the private key: ";
                         std::cin >> decKey;
 
-                        RC6 *rc6Dec = new RC6(decKey);
-                        Decryptor *dec = new Decryptor(rc6Dec);
-
-                        dec->decrypt(decFilename);
-                        delete dec;
-                        
-                        std::cout << "Decrypted file is located at: decoded_text.txt\n";
+                        rc6Dec(decFilename, decKey);
                         sleep(2);
                         break;
                     }
@@ -250,5 +244,11 @@ int rc6Enc(std::string filename)
 
 int rc6Dec(std::string filename, std::string keyFilename)
 {
+    RC6 *rc6Dec = new RC6(keyFilename);
+    Decryptor *dec = new Decryptor(rc6Dec);
 
+    dec->decrypt(filename);
+    delete dec;
+                        
+    std::cout << "Decrypted file is located at: decoded_text.txt\n";
 }
