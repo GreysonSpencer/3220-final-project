@@ -233,7 +233,7 @@ int flags(int argc, char* argv[])
                 {
                     if(keyFilename.find(".txt.key") != std::string::npos)
                     {
-                        
+                        return aesDec(decFilename, keyFilename);
                     }
                     else
                     {
