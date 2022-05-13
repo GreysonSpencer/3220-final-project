@@ -83,14 +83,7 @@ int menu()
                         std::cout << "Enter a filename to be encrypted with RC6 encryption: ";
                         std::cin >> encFilename;
 
-                        RC6 *rc6 = new RC6();
-                        Encryptor *enc = new Encryptor(rc6);
-
-                        enc->encrypt(encFilename);
-                        delete enc;
-
-                        std::cout << "Encrypted file is called: " << encFilename << ".cipher\n";
-                        std::cout << "Encryption key is called: " << encFilename << ".key\n";
+                        rc6Enc(encFilename);
                         sleep(3);
                         break;
                     }
@@ -245,7 +238,14 @@ int aesDec(std::string filename, std::string keyFilename)
 
 int rc6Enc(std::string filename)
 {
+    RC6 *rc6 = new RC6();
+    Encryptor *enc = new Encryptor(rc6);
 
+    enc->encrypt(filename);
+    delete enc;
+
+    std::cout << "Encrypted file is called: " << filename << ".cipher\n";
+    std::cout << "Encryption key is called: " << filename << ".key\n";
 }
 
 int rc6Dec(std::string filename, std::string keyFilename)
