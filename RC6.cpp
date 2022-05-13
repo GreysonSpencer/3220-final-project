@@ -76,4 +76,28 @@ void RC6::decrypt(std::string filename)
 
     FileIO ciphertextFile(filename);
     std::string ivCiphertext = ciphertextFile.readFile();
+
+    //Read in the full string from the file
+    FileIO inputFile(filename);
+    std::string ivCiphertext = inputFile.readFile();
+    
+    // Create a sink for the IV
+    CryptoPP::ArraySink ivSink(_iv, CryptoPP::RC6::BLOCKSIZE);
+    
+    // Create the source from the imported string
+    // Don't pump all of the contents
+    StringSource source(ivCiphertext, false);
+
+    // Attach a redirector to the sink
+    source.Attach(new Redirector(ivSink));
+
+    // Pump one block from the source, putting the IV into the ivSink
+    source.Pump(CryptoPP::AES::BLOCKSIZE);
+
+    // Create a new string sink and replace the ivSink on the source
+    std::string ciphertext;
+    source.Detach(new StringSink(ciphertext));
+
+    // Pump the rest of the string into the string sink
+    source.PumpAll();
 }
