@@ -324,6 +324,7 @@ int flags(int argc, char* argv[])
             std::cout << "To decrypt files, use arguments: \n";
             std::cout << "-aesD \"filename\" \"key filename\"\n";
             std::cout << "-rc6D \"filename\" \"key filename\"\n";
+            return EXIT_SUCCESS;
         }
         else
         {
@@ -331,7 +332,7 @@ int flags(int argc, char* argv[])
             return EXIT_FAILURE;
         }
     }
-    
+    return EXIT_FAILURE;
 }
 
 int aesEnc(std::string filename)
