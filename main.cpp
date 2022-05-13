@@ -316,6 +316,14 @@ int flags(int argc, char* argv[])
         else if(input == "-h")
         {
             // Help info
+            std::cout << "Help information: \n";
+            std::cout << "Encryption supported by this tool: AES and RC6\n";
+            std::cout << "To encrypt files, use arguments: \n";
+            std::cout << "-aesE \"filename\"\n";
+            std::cout << "-rc6E \"filename\"\n";
+            std::cout << "To decrypt files, use arguments: \n";
+            std::cout << "-aesD \"filename\" \"key filename\"\n";
+            std::cout << "-rc6D \"filename\" \"key filename\"\n";
         }
         else
         {
