@@ -1,4 +1,10 @@
 #include <gtest/gtest.h>
+#include "AES.h"
+
+TEST(AESEncryption, EncryptionDecryption)
+{
+    
+}
 
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
