@@ -33,6 +33,8 @@
 
 .vscode
 main
-*.txt
+test.txt
+plan.txt
+decoded_text.txt
 *.cipher
 *.key
