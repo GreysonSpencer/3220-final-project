@@ -201,7 +201,25 @@ int flags(int argc, char* argv[])
         input = argv[i];
         if(input == "-aesE")
         {
-            // AES encryption
+            if(i+1 < argc)
+            {
+                i++;
+                std::string encFilename = argv[i];
+                if(encFilename.find(".txt") != std::string::npos)
+                {
+                    return aesEnc(encFilename);
+                }
+                else
+                {
+                    std::cout << "-aesE requires a text file following the flag, encryption failed.\n";
+                    return EXIT_FAILURE;
+                }
+            }
+            else
+            {
+                std::cout << "-aesE requires a text file following the flag, encryption failed.\n";
+                return EXIT_FAILURE;
+            }
         }
         else if(input == "-aesD")
         {
