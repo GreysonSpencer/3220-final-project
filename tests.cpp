@@ -1,5 +1,8 @@
 #include <gtest/gtest.h>
 #include "AES.h"
+#include "Encryptor.h"
+#include "Decryptor.h"
+#include <fstream>
 
 TEST(AESEncryption, EncryptionDecryption)
 {
