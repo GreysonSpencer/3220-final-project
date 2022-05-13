@@ -38,3 +38,4 @@ plan.txt
 decoded_text.txt
 *.cipher
 *.key
+build
