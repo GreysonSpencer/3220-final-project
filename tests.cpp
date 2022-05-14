@@ -100,6 +100,15 @@ TEST(EncryptorTest, ReplacementTest)
     EXPECT_EQ(aes, nullptr);
 }
 
+TEST(DecryptorTest, ReplacementTest)
+{
+    AES *aes = new AES();
+    Decryptor dec(aes);
+    dec.changeStrategy(new AES());
+
+    EXPECT_EQ(aes, nullptr);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
