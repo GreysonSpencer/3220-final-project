@@ -5,4 +5,6 @@ include_directories(${GTEST_INCLUDE_DIRS})
 # Link runTests with what we want to test and the GTest and pthread library
 # and the cryptopp library
 add_executable(runTests tests.cpp)
-target_link_libraries(runTests ${GTEST_LIBRARIES} pthread cryptopp)
+target_link_libraries(runTests ${GTEST_LIBRARIES} pthread cryptopp gcov)
+# Add gcov flags
+target_compile_options(runTests PUBLIC -fprofile-arcs -ftest-coverage)
