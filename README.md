@@ -3,8 +3,10 @@
 This project was created for ECE 3220.
 
 
+# Demo
 Project demo video: https://youtu.be/qsAOwSEFHEM 
 
+# Compilation
 To compile and run the application in menu mode:
 
 ```bash
@@ -19,6 +21,7 @@ make
 ./main <flags>
 ```
 
+# Testing
 To run tests:
 
 ```bash
@@ -49,5 +52,6 @@ To clear out gcov files:
 rm *.gcov tests.gcda tests.gcno
 ```
 
+# Docker image
 Dockerhub repository: 
 https://hub.docker.com/repository/docker/greysonspencer/3220-final-project/general
