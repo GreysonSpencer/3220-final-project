@@ -12,5 +12,3 @@ RUN apt-get install libcrypto++6 libcrypto++6-dbg libcrypto++-dev -y
 RUN git clone "https://github.com/GreysonSpencer/3220-final-project.git"
 WORKDIR 3220-final-project
 RUN make
-
-RUN ./main
