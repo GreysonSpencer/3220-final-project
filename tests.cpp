@@ -91,6 +91,15 @@ TEST(FileIOTest, HelperFunctions)
     delete file2;
 }
 
+TEST(EncryptorTest, ReplacementTest)
+{
+    AES *aes = new AES();
+    Encryptor enc(aes);
+    enc.changeStrategy(new AES());
+
+    EXPECT_EQ(aes, nullptr);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
