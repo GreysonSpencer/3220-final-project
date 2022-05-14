@@ -75,6 +75,17 @@ TEST(RC6Encryption, EncryptionDecryption)
     EXPECT_EQ(testString, output);
 }
 
+TEST(FileIOTest, HelperFunctions)
+{
+    FileIO *file = new FileIO("testfile.txt");
+
+    file->setFilename("newtestfile.txt");
+
+    EXPECT_EQ("newtestfile.txt", file->getFilename());
+
+    delete file;
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
