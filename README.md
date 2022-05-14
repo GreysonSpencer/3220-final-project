@@ -1,5 +1,10 @@
 # 3220-final-project
 
+This project was created for ECE 3220.
+
+
+Project demo video: https://youtu.be/qsAOwSEFHEM 
+
 To compile and run the application in menu mode:
 
 ```bash
