@@ -15,6 +15,7 @@ void Encryptor::changeStrategy(EncryptionStrategy *strategy)
     EncryptionStrategy *oldStrategy = _strategy;
     _strategy = strategy;
     delete oldStrategy;
+    oldStrategy = nullptr;
 }
 
 void Encryptor::encrypt(std::string filename)
