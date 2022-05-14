@@ -2,7 +2,7 @@ TARGET := main
 
 CFLAGS := -Wall -Wextra -Werror -DNDEBUG -O2
 
-SOURCES := $(wildcard *.cpp)
+SOURCES := main.cpp AES.cpp Decryptor.cpp Encryptor.cpp FileIO.cpp RC6.cpp
 
 CC := g++
 
