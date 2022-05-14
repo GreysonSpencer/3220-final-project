@@ -1,7 +1,13 @@
 # 3220-final-project
 
-This project was created for ECE 3220.
+# Report
+This project was created for ECE 3220. I decided to develop it by myself. The idea that I had for my project initially was a text file encryption tool that can use different kinds of encryption on text files. I have accomplished this by implementing the Crypto++ library into my project. The two encryption schemes supported are AES and RC6. 
 
+# Modes
+The two supported modes are menu mode and command line mode. If the executable created by the Makefile is run without any command line arguments, then it will run in menu mode. Menu mode is intended to be more friendly for first time users.
+
+# Dependencies
+Using the docker image, all of the correct versions of the required dependencies are already installed.
 
 # Demo
 Project demo video: https://youtu.be/qsAOwSEFHEM 
