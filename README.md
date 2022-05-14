@@ -6,3 +6,10 @@ To compile and run the application in menu mode:
 make
 ./main
 ```
+
+To compile and run the application with flags:
+
+```bash
+make
+./main <flags>
+```
