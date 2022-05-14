@@ -9,7 +9,7 @@ The two supported modes are menu mode and command line mode. If the executable c
 # Dependencies
 Using the docker image, all of the correct versions of the required dependencies are already installed.
 
-# Demo
+# Demo showing how to use
 Project demo video: https://youtu.be/qsAOwSEFHEM 
 
 # Compilation
