@@ -4,7 +4,6 @@ RUN apt-get update
 RUN apt-get install -y git
 RUN apt-get install -y g++
 RUN apt-get install -y make
-RUN apt-get install -y gcov
 # crypto++ installation
 RUN apt-get install libcrypto++6 libcrypto++6-dbg libcrypto++-dev -y
 
