@@ -84,6 +84,11 @@ TEST(FileIOTest, HelperFunctions)
     EXPECT_EQ("newtestfile.txt", file->getFilename());
 
     delete file;
+
+    FileIO *file2 = new FileIO("thisfiledoesnotexist.txt.key");
+    CryptoPP::SecByteBlock testBlock = file2->readKey();
+    EXPECT_EQ(testBlock.size(), 0);
+    delete file2;
 }
 
 int main(int argc, char **argv) {
