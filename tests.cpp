@@ -96,8 +96,6 @@ TEST(EncryptorTest, ReplacementTest)
     AES *aes = new AES();
     Encryptor enc(aes);
     enc.changeStrategy(new AES());
-
-    EXPECT_EQ(aes, nullptr);
 }
 
 TEST(DecryptorTest, ReplacementTest)
@@ -105,8 +103,6 @@ TEST(DecryptorTest, ReplacementTest)
     AES *aes = new AES();
     Decryptor dec(aes);
     dec.changeStrategy(new AES());
-
-    EXPECT_EQ(aes, nullptr);
 }
 
 int main(int argc, char **argv) {
