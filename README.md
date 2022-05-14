@@ -41,5 +41,5 @@ gcov tests.cpp
 To clear out gcov files:
 
 ```bash
-rm *.gcov
+rm *.gcov tests.gcda tests.gcno
 ```
